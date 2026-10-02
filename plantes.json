@@ -1,0 +1,35 @@
+{
+  "_aide": "Catalogue du site. Pour ajouter une plante : copier une entrée, mettre les photos dans img/plantes/<id>/ (webp), et passer a_la_une à true pour la plante du moment (une seule).",
+  "plantes": [
+    {
+      "id": "dieffenbachia",
+      "a_la_une": true,
+      "ajoute": "2026-10-02",
+      "type": "interieur",
+      "nom": "Dieffenbachia",
+      "nom_ar": "ديفنباخيا",
+      "resume": {
+        "fr": "Ses grandes feuilles marbrées de vert et de crème apportent du volume et de la lumière au salon. Facile à vivre, idéale pour débuter.",
+        "ar": "أوراقها الكبيرة المرمرية بالأخضر والكريمي تزيد الحياة والضو للصالون. ساهلة، مليحة للمبتدئين."
+      },
+      "fiche": {
+        "origine": {"fr": "Forêts tropicales d'Amérique", "ar": "غابات أمريكا الاستوائية"},
+        "taille": {"fr": "90 cm à 1,5 m", "ar": "من 90 سم حتى 1.5 م"},
+        "lumiere": {"fr": "Vive, sans soleil direct", "ar": "قوي بلا شمس مباشرة"},
+        "arrosage": {"fr": "Quand la terre est sèche sur 2-3 cm", "ar": "كي تنشف التربة 2-3 سم"}
+      },
+      "precaution": {
+        "fr": "Sève toxique : à garder hors de portée des enfants et des animaux.",
+        "ar": "عصارتها سامة: بعّدوها على الذراري والحيوانات."
+      },
+      "cover": "img/boutique.webp",
+      "detoure": "img/dieffenbachia.webp",
+      "photos": [
+        {"src": "img/feuille.webp", "alt": "Feuille de Dieffenbachia marbrée vert et crème", "legende": {"fr": "Chaque feuille est unique", "ar": "كل ورقة تحفة"}},
+        {"src": "img/salon.webp", "alt": "Dieffenbachia dans un salon méditerranéen", "legende": {"fr": "Elle habille votre salon", "ar": "تزيّن صالونكم"}},
+        {"src": "img/boutique.webp", "alt": "Dieffenbachia dans la boutique Le Pot aux Roses", "legende": {"fr": "En boutique à Baba Hassen", "ar": "متوفرة في المحل"}},
+        {"src": "img/dessus.webp", "alt": "Dieffenbachia vu de dessus", "legende": {"fr": "Vue de dessus", "ar": "من الفوق"}}
+      ]
+    }
+  ]
+}
