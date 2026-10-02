@@ -1,34 +1,422 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Le Pot aux Roses · Fleuriste & Plantes à Baba Hassen, Alger</title>
-<meta name="description" content="Le Pot aux Roses : fleurs, bouquets, plantes vertes, jardinage et paysagisme à Baba Hassen (Alger). Conseils d'entretien et commandes sur WhatsApp.">
-<link rel="icon" href="assets/icone.png"><link rel="stylesheet" href="assets/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Florist","name":"Le Pot aux Roses","url":"https://idrissechaibi-alt.github.io/","logo":"https://idrissechaibi-alt.github.io/assets/icone.png","telephone":"+213562743297","address":{"@type":"PostalAddress","addressLocality":"Baba Hassen","addressRegion":"Alger","addressCountry":"DZ"},"hasMap":"https://maps.app.goo.gl/ekESgbK4w3gEcCHR8","sameAs":["https://www.instagram.com/le.pot_aux_roses/","https://www.tiktok.com/@pot.aux.roses"]}</script>
+<meta name="description" content="Le Pot aux Roses : fleurs, bouquets, plantes d'intérieur et d'extérieur, jardinage et paysagisme à Baba Hassen (Alger). Conseils et commandes sur WhatsApp.">
+<meta name="theme-color" content="#6B4A36">
+<meta property="og:title" content="Le Pot aux Roses · Fleuriste & Plantes à Alger">
+<meta property="og:description" content="Fleurs, plantes, jardin et paysagisme à Baba Hassen. Commandez sur WhatsApp.">
+<meta property="og:image" content="https://idrissechaibi-alt.github.io/img/salon.webp">
+<link rel="icon" href="assets/icone.png">
+<link rel="preload" href="img/hero-m.webp" as="image" media="(max-width:759px)" fetchpriority="high">
+<link rel="preload" href="img/hero.webp" as="image" media="(min-width:760px)" fetchpriority="high">
+<link rel="preload" href="assets/fonts/playfair-display-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Florist","name":"Le Pot aux Roses","url":"https://idrissechaibi-alt.github.io/","image":"https://idrissechaibi-alt.github.io/img/boutique.webp","logo":"https://idrissechaibi-alt.github.io/assets/icone.png","telephone":"+213562743297","address":{"@type":"PostalAddress","addressLocality":"Baba Hassen","addressRegion":"Alger","addressCountry":"DZ"},"hasMap":"https://maps.app.goo.gl/ekESgbK4w3gEcCHR8","sameAs":["https://www.instagram.com/le.pot_aux_roses/","https://www.tiktok.com/@pot.aux.roses"]}</script>
+<style>
+@font-face{font-family:Playfair;font-weight:400;font-display:swap;src:url(assets/fonts/playfair-display-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Playfair;font-weight:700;font-display:swap;src:url(assets/fonts/playfair-display-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Playfair;font-style:italic;font-display:swap;src:url(assets/fonts/playfair-display-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:Montserrat;font-weight:400;font-display:swap;src:url(assets/fonts/montserrat-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Montserrat;font-weight:600;font-display:swap;src:url(assets/fonts/montserrat-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Cairo;font-display:swap;src:url(assets/fonts/cairo-arabic-400-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:Amiri;font-display:swap;src:url(assets/fonts/amiri-arabic-400-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFC}
+/* Charte « Terre & Raphia » */
+:root{
+  --lin:#EFE4D3;--sable:#E4D3BC;--ivoire:#F7F0E4;--noyer:#3B2A20;--noisette:#6B4A36;--olive:#6F7C46;--rose:#D29E8B;--or:#B8894F;
+  --muted:#6E5A4B;--line:rgba(59,42,32,.12);
+  --r-lg:26px;--r:16px;--shadow:0 1px 2px rgba(59,42,32,.06),0 22px 50px -26px rgba(59,42,32,.38);
+  --f:'Montserrat','Cairo',system-ui,sans-serif;--fd:'Playfair','Amiri',Georgia,serif;
+}
+html[lang=ar]{--f:'Cairo','Montserrat',system-ui,sans-serif;--fd:'Amiri','Playfair',serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--lin);color:var(--noyer);font:16px/1.6 var(--f);padding-inline:16px;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+.wrap{max-width:1180px;margin-inline:auto}
+.bleed{margin-inline:-16px;padding-inline:16px}
+.k{font-weight:600;font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--olive)}
+html[lang=ar] .k{letter-spacing:0;font-size:15px}
+h2{font-family:var(--fd);font-weight:700;font-size:clamp(34px,5vw,58px);line-height:1.04;letter-spacing:-.01em;margin-top:10px;text-wrap:balance}
+h2 i,h1 i{font-weight:400;color:var(--rose)}
+html[lang=ar] h2,html[lang=ar] h1{line-height:1.3}
+.sec{padding-block:clamp(70px,10vw,120px)}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:15px 26px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font:600 15.5px var(--f);transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--noisette);color:var(--ivoire);box-shadow:0 14px 30px -14px rgba(107,74,54,.9)}
+.btn.p:hover{background:#5A3D2C}
+.btn.g{background:rgba(247,240,228,.14);color:var(--ivoire);border:1px solid rgba(247,240,228,.4);backdrop-filter:blur(8px)}
+.btn.o{background:transparent;color:var(--noyer);border:1.5px solid var(--or)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* en-tête */
+header.top{position:sticky;top:0;z-index:40;margin-inline:-16px;padding-inline:16px;background:rgba(239,228,211,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+header.top.sc{box-shadow:0 10px 30px -20px rgba(59,42,32,.5)}
+.top-in{display:flex;align-items:center;gap:20px;min-height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-inline-end:auto}
+.logo img{width:40px;height:44px;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.logo:hover img{transform:rotate(-8deg) scale(1.06)}
+.logo b{font-family:'Playfair',serif;font-weight:700;font-size:22px;white-space:nowrap}.logo b i{font-weight:400}
+.nav{display:none;gap:26px;font-weight:600;font-size:14.5px}
+.nav a{text-decoration:none;color:var(--muted);position:relative}
+.nav a::after{content:"";position:absolute;inset-inline:0;bottom:-6px;height:2px;background:var(--rose);transform:scaleX(0);transition:transform .3s}
+.nav a:hover{color:var(--noyer)}.nav a:hover::after{transform:scaleX(1)}
+@media(min-width:1000px){.nav{display:flex}}
+.lang{display:flex;background:rgba(59,42,32,.07);border-radius:999px;padding:3px}
+.lang button{border:0;background:none;padding:6px 12px;border-radius:999px;font:600 13px var(--f);color:var(--muted);cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--noisette);color:var(--ivoire)}
+.top .btn{padding:11px 18px;font-size:14px;display:none}
+@media(min-width:640px){.top .btn{display:inline-flex}}
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;color:var(--ivoire);min-height:min(92vh,860px);display:flex;align-items:flex-end;background:#3B2A20}
+.hero .bg{position:absolute;inset:0;z-index:-2;background:url(img/hero-m.webp) center 35%/cover no-repeat;transform:scale(1.08);animation:kb 18s ease-out forwards}
+@media(min-width:760px){.hero .bg{background-image:url(img/hero.webp)}}
+@keyframes kb{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(59,42,32,.35) 0%,rgba(59,42,32,.55) 45%,rgba(43,30,22,.92) 100%),radial-gradient(70% 60% at 85% 15%,rgba(210,158,139,.35),transparent 70%)}
+.hero-in{width:100%;padding-block:120px 54px;display:grid;gap:22px}
+@media(min-width:1000px){.hero-in{grid-template-columns:1.2fr .8fr;align-items:end;padding-block:160px 70px}}
+.chip{display:inline-flex;align-items:center;gap:10px;background:rgba(247,240,228,.12);border:1px solid rgba(247,240,228,.28);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;backdrop-filter:blur(8px);width:max-content;max-width:100%}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 4px rgba(210,158,139,.25);animation:pulse 2.4s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(210,158,139,0)}}
+h1{font-family:var(--fd);font-weight:700;font-size:clamp(46px,8vw,104px);line-height:.98;letter-spacing:-.02em;text-shadow:0 6px 40px rgba(0,0,0,.35);text-wrap:balance}
+.lede{font-size:clamp(16px,1.6vw,19px);max-width:52ch;color:#F1E6D6}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.hstrip{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+@media(min-width:760px){.hstrip{grid-template-columns:repeat(4,1fr)}}
+.hstrip li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:13.5px;background:rgba(247,240,228,.08);border:1px solid rgba(247,240,228,.16);border-radius:14px;padding:12px 14px;backdrop-filter:blur(6px)}
+.hstrip svg{width:22px;height:22px;flex:none;stroke:var(--rose);fill:none;stroke-width:1.8}
+.floaty{display:none;position:relative;justify-self:center}
+@media(min-width:1000px){.floaty{display:block}}
+.floaty::before{content:"";position:absolute;inset:12% 0 0;border-radius:50%;background:radial-gradient(circle,rgba(210,158,139,.55),rgba(210,158,139,0) 70%);filter:blur(10px);z-index:-1}
+.floaty img{width:min(380px,30vw);filter:drop-shadow(-20px 40px 40px rgba(0,0,0,.45));animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px) rotate(-1.5deg)}}
+.floaty small{position:absolute;bottom:10px;inset-inline-start:-20px;background:var(--ivoire);color:var(--noyer);border-radius:16px;padding:10px 14px;font-weight:600;font-size:13px;box-shadow:var(--shadow)}
+.floaty small b{display:block;font-family:var(--fd);font-size:18px}
+.scroll{position:absolute;bottom:18px;inset-inline-start:50%;transform:translateX(-50%);width:26px;height:42px;border:2px solid rgba(247,240,228,.5);border-radius:20px;display:none}
+.scroll::after{content:"";position:absolute;top:8px;left:50%;width:4px;height:8px;margin-left:-2px;border-radius:4px;background:var(--ivoire);animation:sd 1.8s infinite}
+@keyframes sd{to{transform:translateY(14px);opacity:0}}
+@media(min-width:760px){.scroll{display:block}}
+
+/* défilant */
+.marq{overflow:hidden;background:var(--noisette);color:var(--ivoire);padding-block:14px}
+.marq .t{display:flex;gap:40px;width:max-content;animation:mq 32s linear infinite;font-family:var(--fd);font-size:22px;white-space:nowrap}
+.marq .t span::after{content:"✦";margin-inline-start:40px;color:var(--rose)}
+@keyframes mq{to{transform:translateX(-50%)}}
+html[dir=rtl] .marq .t{animation-direction:reverse}
+
+/* vitrine plante */
+.show{display:grid;gap:22px}
+@media(min-width:960px){.show{grid-template-columns:1.25fr 1fr;align-items:stretch}}
+.photo{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--sable);aspect-ratio:4/5;box-shadow:var(--shadow)}
+@media(min-width:960px){.photo{aspect-ratio:auto;min-height:640px}}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.2s ease,transform 7s ease}
+.slides img.on{opacity:1;transform:scale(1)}
+.photo::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(180deg,transparent,rgba(43,30,22,.78));pointer-events:none}
+.pcap{position:absolute;inset-inline-start:22px;bottom:20px;z-index:2;color:var(--ivoire);display:grid;gap:8px}
+.pcap small{font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose)}
+html[lang=ar] .pcap small{letter-spacing:0;font-size:14px}
+.pcap b{font-family:var(--fd);font-size:clamp(22px,2.6vw,32px);font-weight:400;font-style:italic}
+.dots{display:flex;gap:6px}
+.dots button{width:22px;height:4px;border-radius:9px;background:rgba(247,240,228,.4);border:0;cursor:pointer;transition:width .3s,background .3s}
+.dots button.on{width:38px;background:var(--rose)}
+.ai{position:absolute;top:16px;inset-inline-start:16px;z-index:2;font-size:12px;background:rgba(43,30,22,.55);color:var(--ivoire);padding:6px 12px;border-radius:99px;opacity:0;transition:opacity .4s}
+.ai.on{opacity:1}
+.info{background:radial-gradient(120% 90% at 100% 0%,#7E5A44 0%,var(--noisette) 50%,#4F3627 100%);color:var(--ivoire);border-radius:var(--r-lg);padding:clamp(26px,3.5vw,44px);display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.info::after{content:"";position:absolute;inset-inline-end:-80px;bottom:-80px;width:260px;height:260px;border-radius:50%;border:1px solid rgba(210,158,139,.35);box-shadow:0 0 0 34px rgba(210,158,139,.06),0 0 0 70px rgba(210,158,139,.04);pointer-events:none}
+.info .k{color:var(--rose)}
+.info h2{color:var(--ivoire)}
+.info .ar-name{font-family:'Amiri',serif;font-size:30px;color:var(--rose);margin-top:-8px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.facts div{background:rgba(247,240,228,.09);border:1px solid rgba(247,240,228,.14);border-radius:14px;padding:12px 14px}
+.facts small{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#E9C9BC;font-weight:600}
+html[lang=ar] .facts small{letter-spacing:0;font-size:13px}
+.facts b{font-weight:600;font-size:14.5px}
+.warn{font-size:13.5px;color:#F1E0D2;border-inline-start:3px solid var(--rose);padding-inline-start:12px}
+.info .btn.p{background:var(--ivoire);color:var(--noyer);margin-top:auto;width:max-content;max-width:100%}
+
+/* univers */
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:34px}
+.head p{max-width:46ch;color:var(--muted)}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:380px;display:flex;align-items:flex-end;color:var(--ivoire);text-decoration:none;isolation:isolate;box-shadow:var(--shadow)}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 30%,rgba(43,30,22,.88))}
+.card:hover img{transform:scale(1.07)}
+.card .c{padding:24px;display:grid;gap:6px}
+.card h3{font-family:var(--fd);font-size:28px;font-weight:700}
+.card p{font-size:14.5px;color:#EDE0CF}
+.card span{margin-top:8px;font-weight:600;font-size:14px;color:var(--rose)}
+.card.plain{background:var(--olive)}
+.card.plain span{color:var(--ivoire);text-decoration:underline;text-underline-offset:4px}
+.card.plain.rosa{background:#B77E6C}
+.card.plain.nois{background:var(--noisette)}
+.card.plain::after{background:radial-gradient(90% 70% at 100% 0%,rgba(210,158,139,.35),transparent 60%)}
+.card.plain .ico{position:absolute;top:24px;inset-inline-start:24px;width:64px;height:64px;stroke:var(--ivoire);fill:none;stroke-width:1.4;opacity:.9}
+
+/* composer */
+.compose{display:grid;gap:22px;background:var(--ivoire);border-radius:var(--r-lg);padding:clamp(24px,4vw,48px);box-shadow:var(--shadow);border:1px solid var(--line)}
+@media(min-width:900px){.compose{grid-template-columns:.9fr 1.1fr;align-items:center}}
+.compose form{display:grid;gap:14px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{cursor:pointer;position:relative}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts span{display:inline-block;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--lin);font-weight:600;font-size:14px;transition:all .2s}
+.opts input:checked+span{background:var(--noisette);color:var(--ivoire);border-color:var(--noisette)}
+.opts input:focus-visible+span{outline:3px solid var(--or);outline-offset:2px}
+.fl{font-weight:600;font-size:13px;color:var(--muted)}
+textarea{width:100%;min-height:96px;border-radius:var(--r);border:1.5px solid var(--line);background:var(--lin);padding:14px;font:15px var(--f);color:var(--noyer);resize:vertical}
+textarea:focus{outline:none;border-color:var(--or)}
+
+/* conseils */
+.tips{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.tip{background:var(--ivoire);border-radius:var(--r-lg);padding:28px;border-top:6px solid var(--rose);box-shadow:var(--shadow)}
+.tip:nth-child(2){border-top-color:var(--olive)}.tip:nth-child(3){border-top-color:var(--or)}
+.tip .n{font-family:var(--fd);font-size:46px;color:var(--rose);line-height:1}
+.tip h3{font-family:var(--fd);font-size:24px;margin-top:6px}
+.tip p{color:var(--muted);margin-top:6px;font-size:15px}
+.quote{margin-top:16px;background:var(--sable);border-radius:var(--r-lg);padding:clamp(26px,4vw,46px);display:grid;gap:10px}
+.quote b{font-family:var(--fd);font-weight:400;font-style:italic;font-size:clamp(24px,3vw,36px);line-height:1.2}
+.quote b i{color:var(--olive)}
+.quote p{color:var(--muted)}
+
+/* boutique */
+.shop{display:grid;gap:18px}
+@media(min-width:960px){.shop{grid-template-columns:1fr 1fr}}
+.shop .ph{border-radius:var(--r-lg);overflow:hidden;min-height:420px;position:relative;box-shadow:var(--shadow)}
+.shop .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shop .box{background:var(--ivoire);border-radius:var(--r-lg);padding:clamp(24px,3.5vw,42px);display:flex;flex-direction:column;gap:16px;border:1px solid var(--line)}
+.map{border-radius:var(--r);overflow:hidden;min-height:220px;flex:1;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;min-height:220px;border:0;display:block;filter:sepia(.25) saturate(.85)}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.soc{display:flex;gap:10px}
+.soc a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--lin);border:1px solid var(--line);transition:transform .25s,background .25s}
+.soc a:hover{transform:translateY(-3px);background:var(--sable)}
+.soc svg{width:20px;height:20px}
+
+footer{margin-inline:-16px;padding:56px 16px 90px;background:var(--noyer);color:#D9C9B6}
+footer .wrap{display:grid;gap:22px}
+@media(min-width:760px){footer .wrap{grid-template-columns:1.4fr 1fr 1fr}}
+footer b.n{font-family:'Playfair',serif;font-size:26px;color:var(--ivoire)}footer b.n i{font-weight:400;color:var(--rose)}
+footer a{color:#EAD9C6;text-decoration:none}footer a:hover{color:var(--rose)}
+footer ul{list-style:none;display:grid;gap:8px}
+footer small{grid-column:1/-1;border-top:1px solid rgba(239,228,211,.15);padding-top:18px;color:#A8927E}
+
+/* bouton WhatsApp flottant */
+.fab{position:fixed;inset-inline-end:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;width:60px;height:60px;border-radius:50%;background:var(--olive);display:grid;place-items:center;box-shadow:0 16px 34px -12px rgba(59,42,32,.7);transition:transform .25s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:30px;height:30px;fill:var(--ivoire)}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--olive);animation:ring 2.6s infinite}
+@keyframes ring{to{transform:scale(1.6);opacity:0}}
+
+/* apparitions */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero .bg,.floaty img,.marq .t,.chip i,.fab::before{animation:none}}
+</style>
 </head>
 <body>
-<main class="wrap">
-  <section class="hero">
-    <img src="assets/symbole.svg" alt="Logo Le Pot aux Roses : une rose dans un pot en terre cuite">
-    <h1>Le Pot <i>aux</i> Roses</h1>
-    <div class="tag">Fleurs · Plantes · Jardin</div>
-    <div class="ar">ورود ونباتات · بابا حسن</div>
-    <p class="lead">Fleuriste et pépinière à Baba Hassen (Alger) : bouquets, plantes vertes, pots et terreau, aménagement d'espaces verts et conseils d'entretien.</p>
-    <div class="btns">
-      <a class="btn p" href="https://wa.me/213562743297?text=Bonjour%2C%20je%20viens%20du%20site%20Le%20Pot%20aux%20Roses">Commander sur WhatsApp</a>
-      <a class="btn s" href="https://maps.app.goo.gl/ekESgbK4w3gEcCHR8">Itinéraire boutique</a>
-      <a class="btn s" href="https://www.instagram.com/le.pot_aux_roses/">Instagram</a>
-      <a class="btn s" href="https://www.tiktok.com/@pot.aux.roses">TikTok</a>
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="logo" href="#accueil" aria-label="Le Pot aux Roses"><img src="assets/symbole.svg" alt=""><b>Le Pot <i>aux</i> Roses</b></a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="#plante" data-i="nav1">La plante du moment</a><a href="#univers" data-i="nav2">Nos univers</a><a href="#conseils" data-i="nav3">Conseils</a><a href="#boutique" data-i="nav4">La boutique</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue"><button data-lang="fr" aria-pressed="true">FR</button><button data-lang="ar" aria-pressed="false">ع</button></div>
+    <a class="btn p wa" data-msg="Bonjour Le Pot aux Roses 🌿" href="#"><span data-i="cta_short">Commander</span></a>
+  </div>
+</header>
+
+<main id="accueil">
+<section class="hero bleed">
+  <div class="bg" role="img" aria-label="La boutique Le Pot aux Roses à Baba Hassen"></div>
+  <div class="wrap hero-in">
+    <div style="display:grid;gap:18px">
+      <span class="chip"><i></i><span data-i="chip">Fleuriste · Pépinière · Baba Hassen, Alger</span></span>
+      <h1 data-i="h1" data-html>Le végétal,<br>avec <i>élégance</i>.</h1>
+      <p class="lede" data-i="lede">Bouquets composés à la main, plantes d'intérieur et d'extérieur, jardinage et aménagement d'espaces verts. Et toujours, un conseil sincère pour que vos plantes vivent longtemps.</p>
+      <div class="ctas">
+        <a class="btn p wa" data-msg="Bonjour Le Pot aux Roses, je souhaite passer une commande 🌿" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span data-i="cta">Commander sur WhatsApp</span></a>
+        <a class="btn g" href="#boutique" data-i="cta2">Venir en boutique</a>
+      </div>
+      <ul class="hstrip">
+        <li><svg viewBox="0 0 24 24"><path d="M12 21V11M12 14c-4 0-7-3-7-8 4 0 7 3 7 8zM12 11c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg><span data-i="s1">Plantes d'intérieur & d'extérieur</span></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M12 11v10M9 17c-2 0-4-1-5-3 3-1 5 0 5 3zM15 17c2 0 4-1 5-3-3-1-5 0-5 3z"/></svg><span data-i="s2">Bouquets sur mesure</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V10l6-5 6 5v10M10 20v-5h4v5"/></svg><span data-i="s3">Aménagement & paysagisme</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-4-7.5L21 3v5h-5"/><path d="M12 8v4l3 2"/></svg><span data-i="s4">Conseils d'entretien</span></li>
+      </ul>
     </div>
-  </section>
-  <section class="cards">
-    <div class="card"><h3>Fleurs & bouquets</h3><p>Pour toutes les occasions, composés à la main en boutique.</p></div>
-    <div class="card"><h3>Plantes & jardin</h3><p>Plantes d'intérieur et d'extérieur, pots, terreau et conseils.</p></div>
-    <div class="card"><h3>Paysagisme</h3><p>Aménagement de vos espaces verts, sur devis.</p></div>
-  </section>
-  <p class="muted" style="text-align:center">WhatsApp : 0562 74 32 97 · Boutique à Baba Hassen, Alger</p>
+    <figure class="floaty" aria-hidden="true">
+      <img src="img/dieffenbachia.webp" alt="" width="380" height="460">
+      <small><span data-i="float_k">La plante du moment</span><b>Dieffenbachia</b></small>
+    </figure>
+  </div>
+  <span class="scroll" aria-hidden="true"></span>
+</section>
+
+<div class="marq bleed" aria-hidden="true"><div class="t" id="marq"></div></div>
+
+<section class="wrap sec" id="plante">
+  <div class="show">
+    <div class="photo rv">
+      <div class="slides" id="slides">
+        <img class="on" src="img/feuille.webp" alt="Feuille de Dieffenbachia marbrée vert et crème" data-cap="cap1">
+        <img src="img/salon.webp" alt="Dieffenbachia dans un salon méditerranéen (image générée par IA)" data-cap="cap2" data-ai loading="lazy">
+        <img src="img/boutique.webp" alt="Dieffenbachia dans la boutique Le Pot aux Roses" data-cap="cap3" loading="lazy">
+        <img src="img/dessus.webp" alt="Dieffenbachia vu de dessus" data-cap="cap4" loading="lazy">
+      </div>
+      <span class="ai" id="ai" data-i="ai">Mise en situation · image générée par IA</span>
+      <div class="pcap"><small data-i="pk">Plante du moment</small><b id="capt"></b><div class="dots" id="dots"></div></div>
+    </div>
+    <aside class="info rv">
+      <span class="k" data-i="pk">Plante du moment</span>
+      <h2>Dieffenbachia</h2>
+      <div class="ar-name">ديفنباخيا</div>
+      <p data-i="pd">Ses grandes feuilles marbrées de vert et de crème apportent du volume et de la lumière au salon. Facile à vivre, idéale pour débuter.</p>
+      <div class="facts">
+        <div><small data-i="f1k">Origine</small><b data-i="f1">Forêts tropicales d'Amérique</b></div>
+        <div><small data-i="f2k">Taille adulte</small><b data-i="f2">90 cm à 1,5 m</b></div>
+        <div><small data-i="f3k">Lumière</small><b data-i="f3">Vive, sans soleil direct</b></div>
+        <div><small data-i="f4k">Arrosage</small><b data-i="f4">Quand la terre est sèche sur 2-3 cm</b></div>
+      </div>
+      <p class="warn" data-i="pw">Sève toxique : à garder hors de portée des enfants et des animaux.</p>
+      <a class="btn p wa" data-msg="Bonjour, je suis intéressé(e) par le Dieffenbachia 🌿" href="#"><span data-i="pc">Je la veux</span> →</a>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap sec" id="univers" style="padding-top:0">
+  <div class="head rv"><div><span class="k" data-i="uk">Nos univers</span><h2 data-i="uh" data-html>Tout pour faire <i>fleurir</i> votre intérieur.</h2></div><p data-i="up">Choisissez un univers : nous vous répondons sur WhatsApp avec photos et conseils.</p></div>
+  <div class="cards">
+    <a class="card rv wa plain rosa" data-msg="Bonjour, je souhaite un bouquet 💐" href="#"><svg class="ico" viewBox="0 0 64 64"><circle cx="32" cy="18" r="7"/><path d="M32 6v5M32 25v5M20 18h5M39 18h5M23.5 9.5l3.5 3.5M37 23l3.5 3.5M40.5 9.5L37 13M27 23l-3.5 3.5"/><path d="M32 30v28"/><path d="M32 46c-8-1-13-6-14-13 8 0 13 5 14 13zM32 40c1-8 6-13 14-14 0 8-5 13-14 14z"/></svg><div class="c"><h3 data-i="c1">Fleurs & bouquets</h3><p data-i="c1p">Composés à la main pour toutes vos occasions.</p><span data-i="ask">Demander →</span></div></a>
+    <a class="card rv wa" data-msg="Bonjour, je cherche une plante d'intérieur 🪴" href="#"><img src="img/plante.webp" alt="" loading="lazy"><div class="c"><h3 data-i="c2">Plantes d'intérieur</h3><p data-i="c2p">Des plantes choisies pour votre lumière et votre rythme.</p><span data-i="ask">Demander →</span></div></a>
+    <a class="card rv wa plain" data-msg="Bonjour, j'ai besoin de pots / terreau / articles de jardinage 🌱" href="#"><svg class="ico" viewBox="0 0 64 64"><path d="M14 30h36l-4 26H18z"/><path d="M10 24h44v6H10z"/><path d="M32 24V10M32 16c-6 0-10-4-10-8 6 0 10 4 10 8zM32 14c0-5 4-8 9-8 0 5-4 8-9 8z"/></svg><div class="c"><h3 data-i="c3">Jardinage</h3><p data-i="c3p">Pots, terreau et tout le nécessaire, avec les bons conseils.</p><span data-i="ask">Demander →</span></div></a>
+    <a class="card rv wa plain nois" data-msg="Bonjour, je souhaite un devis pour un aménagement d'espace vert 🌳" href="#"><svg class="ico" viewBox="0 0 64 64"><path d="M32 58V34"/><circle cx="32" cy="22" r="14"/><path d="M32 34l-8-8M32 40l8-8"/><path d="M8 58h48"/></svg><div class="c"><h3 data-i="c4">Paysagisme</h3><p data-i="c4p">Aménagement de jardins, terrasses et espaces verts, sur devis.</p><span data-i="ask">Demander →</span></div></a>
+  </div>
+</section>
+
+<section class="wrap sec" style="padding-top:0">
+  <div class="compose rv">
+    <div><span class="k" data-i="mk">Votre demande</span><h2 data-i="mh" data-html>Composez, on s'occupe <i>du reste</i>.</h2><p style="color:var(--muted);margin-top:12px" data-i="mp">Trois clics, et votre demande part sur WhatsApp. Nous vous répondons avec des photos et nos conseils.</p></div>
+    <form id="form">
+      <span class="fl" data-i="q1">Vous cherchez</span>
+      <div class="opts" id="o1"></div>
+      <span class="fl" data-i="q2">Pour</span>
+      <div class="opts" id="o2"></div>
+      <span class="fl" data-i="q3">Un détail à ajouter ?</span>
+      <textarea id="note" data-ph="note_ph"></textarea>
+      <button class="btn p" type="submit" style="width:max-content"><span data-i="send">Envoyer sur WhatsApp</span> →</button>
+    </form>
+  </div>
+</section>
+
+<section class="wrap sec" id="conseils" style="padding-top:0">
+  <div class="head rv"><div><span class="k" data-i="tk">Conseils</span><h2 data-i="th" data-html>Des plantes qui <i>durent</i>.</h2></div><p data-i="tp">Nos trois règles d'or, valables pour la plupart des plantes d'intérieur.</p></div>
+  <div class="tips">
+    <article class="tip rv"><div class="n">01</div><h3 data-i="t1">La bonne lumière</h3><p data-i="t1p">Près d'une fenêtre lumineuse, mais à l'abri du soleil direct de l'été algérois.</p></article>
+    <article class="tip rv"><div class="n">02</div><h3 data-i="t2">Arroser moins, mais mieux</h3><p data-i="t2p">Touchez la terre : on arrose quand elle est sèche sur 2 à 3 cm. L'excès d'eau est l'erreur n°1.</p></article>
+    <article class="tip rv"><div class="n">03</div><h3 data-i="t3">Au chaud l'hiver</h3><p data-i="t3p">Les plantes tropicales rentrent dès que les nuits passent sous 15 °C, loin des courants d'air.</p></article>
+  </div>
+  <div class="quote rv"><span class="k" data-i="qk">Le saviez-vous ?</span><b data-i="qb" data-html>On surnomme le Dieffenbachia <i>« la canne des muets »</i>.</b><p data-i="qp">Sa sève fait gonfler la bouche si on la mâche. Belle à regarder, jamais à goûter.</p></div>
+</section>
+
+<section class="wrap sec" id="boutique" style="padding-top:0">
+  <div class="head rv"><div><span class="k" data-i="bk">La boutique</span><h2 data-i="bh" data-html>Venez nous <i>rendre visite</i>.</h2></div></div>
+  <div class="shop">
+    <div class="ph rv"><img src="img/boutique.webp" alt="Intérieur de la boutique Le Pot aux Roses à Baba Hassen" loading="lazy"></div>
+    <div class="box rv">
+      <b style="font-family:var(--fd);font-size:30px">Le Pot <i style="font-weight:400;color:var(--rose)">aux</i> Roses</b>
+      <p data-i="addr">Boutique à Baba Hassen, Alger</p>
+      <div class="map"><iframe title="Carte" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=MXWF%2BQCF+Baba+Hassen&output=embed"></iframe></div>
+      <div class="row">
+        <a class="btn p" href="https://maps.app.goo.gl/ekESgbK4w3gEcCHR8" target="_blank" rel="noopener" data-i="itin">Itinéraire</a>
+        <a class="btn o wa" data-msg="Bonjour Le Pot aux Roses 🌿" href="#">WhatsApp 0562 74 32 97</a>
+      </div>
+      <div class="soc">
+        <a href="https://www.instagram.com/le.pot_aux_roses/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#6B4A36" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#6B4A36"/></svg></a>
+        <a href="https://www.tiktok.com/@pot.aux.roses" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="#6B4A36"><path d="M16.5 3c.4 2.2 1.8 3.7 4 4v3.2a7.3 7.3 0 0 1-4-1.3v6.3a6 6 0 1 1-6-6h.5v3.3h-.5a2.7 2.7 0 1 0 2.7 2.7V3z"/></svg></a>
+        <a class="wa" data-msg="Bonjour Le Pot aux Roses 🌿" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#6B4A36"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
-<footer><a href="https://www.instagram.com/le.pot_aux_roses/">Instagram</a>·<a href="https://www.tiktok.com/@pot.aux.roses">TikTok</a>·<a href="https://wa.me/213562743297">WhatsApp</a><br><a href="conditions.html">Conditions d'utilisation</a>·<a href="confidentialite.html">Confidentialité</a></footer>
+
+<footer>
+  <div class="wrap">
+    <div><b class="n">Le Pot <i>aux</i> Roses</b><p style="margin-top:8px" data-i="ft">Fleurs, plantes, jardin et paysagisme à Baba Hassen, Alger.</p></div>
+    <ul><li><a href="#plante" data-i="nav1">La plante du moment</a></li><li><a href="#univers" data-i="nav2">Nos univers</a></li><li><a href="#conseils" data-i="nav3">Conseils</a></li><li><a href="#boutique" data-i="nav4">La boutique</a></li></ul>
+    <ul><li><a href="https://www.instagram.com/le.pot_aux_roses/">Instagram</a></li><li><a href="https://www.tiktok.com/@pot.aux.roses">TikTok</a></li><li><a href="conditions.html" data-i="l1">Conditions d'utilisation</a></li><li><a href="confidentialite.html" data-i="l2">Confidentialité</a></li></ul>
+    <small>© <span id="y"></span> Le Pot aux Roses · Baba Hassen, Alger</small>
+  </div>
+</footer>
+
+<a class="fab wa" data-msg="Bonjour Le Pot aux Roses 🌿" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+
+<script>
+const WA="213562743297";
+const T={ar:{
+nav1:"نبتة الأسبوع",nav2:"عالمنا",nav3:"نصائح",nav4:"المحل",cta_short:"اطلبوا",
+chip:"ورود ونباتات · بابا حسن، الجزائر",h1:"النباتات،<br>بكل <i>أناقة</i>.",
+lede:"باقات مصنوعة باليد، نباتات داخلية وخارجية، بستنة وتهيئة المساحات الخضراء. ودايما نصيحة صادقة باش تعيش نباتاتكم مدة طويلة.",
+cta:"اطلبوا في الواتساب",cta2:"زورونا في المحل",s1:"نباتات داخلية وخارجية",s2:"باقات على الطلب",s3:"تهيئة الحدائق",s4:"نصائح العناية",
+float_k:"نبتة الأسبوع",ai:"صورة تخيلية مولّدة بالذكاء الاصطناعي",pk:"نبتة الأسبوع",
+pd:"أوراقها الكبيرة المرمرية بالأخضر والكريمي تزيد الحياة والضو للصالون. ساهلة، مليحة للمبتدئين.",
+f1k:"الأصل",f1:"غابات أمريكا الاستوائية",f2k:"الطول",f2:"من 90 سم حتى 1.5 م",f3k:"الضو",f3:"قوي بلا شمس مباشرة",f4k:"السقي",f4:"كي تنشف التربة 2-3 سم",
+pw:"عصارتها سامة: بعّدوها على الذراري والحيوانات.",pc:"نحبها",
+cap1:"كل ورقة تحفة",cap2:"تزيّن صالونكم",cap3:"متوفرة في المحل",cap4:"من الفوق",
+uk:"عالمنا",uh:"كلش باش <i>تزهر</i> داركم.",up:"اختاروا: نجاوبوكم في الواتساب بالصور والنصائح.",
+c1:"ورود وباقات",c1p:"مصنوعة باليد لكل المناسبات.",c2:"نباتات داخلية",c2p:"نباتات مختارة حسب الضو تاعكم.",c3:"بستنة",c3p:"قدور، تربة وكل ما يلزم مع النصيحة.",c4:"تهيئة الحدائق",c4p:"حدائق، تراسات ومساحات خضراء، حسب الطلب.",ask:"اطلبوا ←",
+mk:"طلبكم",mh:"اختاروا، وحنا <i>نتكفلو</i>.",mp:"ثلاث نقرات وطلبكم يروح في الواتساب. نجاوبوكم بالصور والنصائح.",
+q1:"راكم تحوسو على",q2:"على جال",q3:"تزيدو حاجة؟",note_ph:"مثلا: اللون، الحجم، التاريخ…",send:"ابعثوا في الواتساب",
+tk:"نصائح",th:"نباتات <i>تدوم</i>.",tp:"ثلاث قواعد ذهبية لأغلب النباتات الداخلية.",
+t1:"الضو المناسب",t1p:"قريب من طاقة مضوية، بعيد على شمس الصيف المباشرة.",t2:"سقي قليل وصحيح",t2p:"لمسو التربة: نسقيو كي تنشف 2-3 سم. الما بزاف هو الغلطة الأولى.",t3:"في السخانة في الشتا",t3p:"النباتات الاستوائية تدخل كي يهبط الليل تحت 15 درجة، بعيد على الريح.",
+qk:"هل تعلمون؟",qb:"الديفنباخيا يسمّوها <i>«عصا البكم»</i>.",qp:"عصارتها تنفّخ الفم إذا تمضغت. شوفوها برك، ما تذوقوهاش.",
+bk:"المحل",bh:"مرحبا بيكم <i>عندنا</i>.",addr:"المحل في بابا حسن، الجزائر",itin:"الطريق",
+ft:"ورود، نباتات، بستنة وتهيئة الحدائق في بابا حسن، الجزائر.",l1:"شروط الاستخدام",l2:"سياسة الخصوصية"
+}};
+const OPT={fr:{o1:["Un bouquet","Une plante d'intérieur","Une plante d'extérieur","Pots & terreau","Un aménagement"],o2:["Offrir","Ma maison","Mon bureau","Un mariage / une fête","Un jardin / une terrasse"],marq:["Bouquets sur mesure","Plantes d'intérieur","Jardinage","Paysagisme","Conseils d'entretien","Baba Hassen, Alger"]},
+ar:{o1:["باقة ورد","نبتة داخلية","نبتة خارجية","قدور وتربة","تهيئة حديقة"],o2:["هدية","الدار","المكتب","عرس / حفلة","حديقة / تراس"],marq:["باقات على الطلب","نباتات داخلية","بستنة","تهيئة الحدائق","نصائح العناية","بابا حسن، الجزائر"]}};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const FR={};$$("[data-i]").forEach(e=>{FR[e.dataset.i]=e.hasAttribute("data-html")?e.innerHTML:e.textContent});
+FR.note_ph="Ex. : couleurs, taille, date…";
+FR.cap1="Chaque feuille est unique";FR.cap2="Elle habille votre salon";FR.cap3="En boutique à Baba Hassen";FR.cap4="Vue de dessus";
+let LANG="fr";try{LANG=localStorage.getItem("par-lang")||"fr"}catch(e){}
+const tr=k=>(LANG==="ar"&&T.ar[k])||FR[k]||"";
+function wa(msg){return"https://wa.me/"+WA+"?text="+encodeURIComponent(msg)}
+function opts(){["o1","o2"].forEach(id=>{const box=$("#"+id),c=box.querySelector("input:checked");const idx=c?+c.value:0;box.innerHTML=OPT[LANG][id].map((t,i)=>`<label><input type="radio" name="${id}" value="${i}" ${i===idx?"checked":""}><span>${t}</span></label>`).join("")})}
+const imgs=$$("#slides img");let cur=0,timer;
+function setCap(){$("#capt").textContent=tr(imgs[cur].dataset.cap)}
+function applyLang(){
+  document.documentElement.lang=LANG;document.documentElement.dir=LANG==="ar"?"rtl":"ltr";
+  $$("[data-i]").forEach(e=>{const v=tr(e.dataset.i);if(e.hasAttribute("data-html"))e.innerHTML=v;else e.textContent=v});
+  $$("[data-ph]").forEach(e=>e.placeholder=tr(e.dataset.ph));
+  $$(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===LANG));
+  const m=OPT[LANG].marq;$("#marq").innerHTML=[...m,...m].map(t=>`<span>${t}</span>`).join("");
+  opts();setCap();
+}
+$$(".lang button").forEach(b=>b.onclick=()=>{LANG=b.dataset.lang;try{localStorage.setItem("par-lang",LANG)}catch(e){}applyLang()});
+$$(".wa").forEach(a=>{a.href=wa(a.dataset.msg);a.target="_blank";a.rel="noopener"});
+$("#dots").innerHTML=imgs.map((_,i)=>`<button aria-label="Photo ${i+1}"></button>`).join("");
+const dots=$$("#dots button");
+function show(i){imgs[cur].classList.remove("on");dots[cur].classList.remove("on");cur=(i+imgs.length)%imgs.length;imgs[cur].classList.add("on");dots[cur].classList.add("on");$("#ai").classList.toggle("on",imgs[cur].hasAttribute("data-ai"));setCap()}
+dots.forEach((d,i)=>d.onclick=()=>{show(i);clearInterval(timer);timer=setInterval(()=>show(cur+1),4500)});
+dots[0].classList.add("on");
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches)timer=setInterval(()=>show(cur+1),4500);
+$("#form").onsubmit=e=>{e.preventDefault();
+  const a=OPT.fr.o1[+$("input[name=o1]:checked").value],b=OPT.fr.o2[+$("input[name=o2]:checked").value],n=$("#note").value.trim();
+  const msg=`Bonjour Le Pot aux Roses 🌿\nJe cherche : ${a}\nPour : ${b}`+(n?`\nDétails : ${n}`:"");
+  try{if(window.confetti)confetti({particleCount:120,spread:70,origin:{y:.75},colors:["#D29E8B","#6F7C46","#B8894F","#F7F0E4"],disableForReducedMotion:true})}catch(x){}
+  setTimeout(()=>window.open(wa(msg),"_blank","noopener"),450)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+$$(".rv").forEach((el,i)=>{el.style.transitionDelay=(i%4)*90+"ms";io.observe(el)});
+addEventListener("scroll",()=>$("#top").classList.toggle("sc",scrollY>10),{passive:true});
+$("#y").textContent=new Date().getFullYear();
+applyLang();
+</script>
 </body>
 </html>
